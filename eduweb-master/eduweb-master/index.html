@@ -53,7 +53,7 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="./assets/images/logo.svg" width="162" height="50" alt="cse logo" >
+        <img src="./assets/CSEPATHSHALA/Part-A/1/white logo.png" width="92" height="20" alt="cse logo" >
 
         <!-- <img src="./assets/images/logo.svg" width="162" height="50" alt="cse logo"> -->
 
@@ -63,7 +63,7 @@
 
         <div class="wrapper">
           <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="162" height="50" alt="cse logo">
+            <img src="./assets/CSEPATHSHALA/Part-A/1/white logo.png" width="92" height="20" alt="cse logo">
           </a>
 
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
@@ -111,7 +111,7 @@
         <a href="#" class="btn has-before">
           <span class="span">Try for free</span> -->
 
-          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+         
         </a>
 
         <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
@@ -137,17 +137,78 @@
         <div class="container">
 
           <div class="hero-content">
-
+          
             <h1 class="h1 section-title">
-              The Best Program to <span class="span">Enroll</span> for Exchange
+              Unlocking the Future of Technology through  
+              <br>
+            <span class="animated-text" data-words="Affordable | easy | innovative | Immersive | Hands-On "></span>
+            <style>
+              .animated-text {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 2px solid transparent;
+                font-weight: bold;
+                color: #de2024;
+              }
+          
+              .animated-text.active {
+                border-right: 2px solid #de2024;
+                animation: typeWriter 2s steps(20) forwards;
+              }
+          
+              @keyframes typeWriter {
+                from {
+                  width: 0;
+                }
+                to {
+                  width: 100%;
+                }
+              }
+            </style>
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                const animatedText = document.querySelector('.animated-text');
+                const words = animatedText.getAttribute('data-words').split(' | ');
+                let wordIndex = 0;
+                let charIndex = 0;
+          
+                function type() {
+                  const currentWord = words[wordIndex];
+                  animatedText.textContent = currentWord.substring(0, charIndex);
+          
+                  if (charIndex < currentWord.length) {
+                    charIndex++;
+                    setTimeout(type, 100); // Adjust typing speed here
+                  } else {
+                    setTimeout(erase, 1000); // Wait after typing
+                  }
+                }
+          
+                function erase() {
+                  if (charIndex > 0) {
+                    const currentWord = words[wordIndex];
+                    animatedText.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, 50); // Adjust erasing speed here
+                  } else {
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, 500); // Wait before typing the next word
+                  }
+                }
+          
+                setTimeout(type, 500);
+              });
+            </script>
+            <br>
+            learning with CSE Pathshala.
             </h1>
-
             <p class="hero-text">
-              Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit.
+              "CSE Pathshala: Your All-in-One Solution for Unlocking the Future of Technology. Embark on a journey that maximises the value of your time and resources with our programming foundation and high-tech courses, all at an affordable cost. Dive into an innovative and accessible learning experience, purposefully crafted to equip you for the technology-driven future."
             </p>
 
             <a href="#" class="btn has-before">
-              <span class="span">Find courses</span>
+              <span class="span">Courses</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -157,14 +218,16 @@
           <figure class="hero-banner">
 
             <div class="img-holder one" style="--width: 270; --height: 300;">
-              <img src="./assets/images/hero-banner-1.jpg" width="270" height="300" alt="hero banner" class="img-cover">
+              <img src="./assets/CSEPATHSHALA/Part-A/3/image3.jpg" width="270" height="300" alt="hero banner" class="img-cover">
             </div>
 
             <div class="img-holder two" style="--width: 240; --height: 370;">
-              <img src="./assets/images/hero-banner-2.jpg" width="240" height="370" alt="hero banner" class="img-cover">
+              <img src="./assets/CSEPATHSHALA/Part-A/3/image 5 c.jpg" width="240" height="370" alt="hero banner" class="img-cover">
             </div>
 
-            <img src="./assets/images/hero-shape-1.svg" width="380" height="190" alt="" class="shape hero-shape-1">
+            <img src="./assets/images/hero-shape-1.svg" width="380" height="190" alt="" class="shape hero-shape-1" style="
+            margin-bottom: -13rem;
+        ">
 
             <img src="./assets/images/hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2">
 
@@ -1115,9 +1178,9 @@
         style="background-image: url('./assets/images/blog-bg.svg')">
         <div class="container">
 
-          <p class="section-subtitle">Latest Articles</p>
+          <p class="section-subtitle">Our Team</p>
 
-          <h2 class="h2 section-title">Get News With Eduweb</h2>
+          <h2 class="h2 section-title">Meet Our Mentors</h2>
 
           <ul class="grid-list">
 
@@ -1125,7 +1188,7 @@
               <div class="blog-card">
 
                 <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
-                  <img src="./assets/images/blog-1.jpg" width="370" height="370" loading="lazy"
+                  <img src="./assets/CSEPATHSHALA/Part-A/5/RS Salaria/RS salaria white background.jpeg" width="370" height="370" loading="lazy"
                     alt="Become A Better Blogger: Content Planning" class="img-cover">
                 </figure>
 
@@ -1135,10 +1198,10 @@
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
 
-                  <a href="#" class="card-subtitle">Online</a>
+                  <a href="#" class="card-subtitle">Author</a>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Become A Better Blogger: Content Planning</a>
+                    <a href="#" class="card-title">Lorem ipsum dolor sit.</a>
                   </h3>
 
                   <ul class="card-meta-list">
@@ -1146,13 +1209,13 @@
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="span">Oct 10, 2021</span>
+                      <span class="span">Nov 10, 2023</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="span">Com 09</span>
+                      <span class="span">Lorem ipsum dolor sit amet consectetur.</span>
                     </li>
 
                   </ul>
@@ -1170,7 +1233,7 @@
               <div class="blog-card">
 
                 <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
-                  <img src="./assets/images/blog-2.jpg" width="370" height="370" loading="lazy"
+                  <img src="./assets/CSEPATHSHALA/Part-A/5/Shambhavi Gupta/shambhavi gupta.jpeg" width="370" height="370" loading="lazy"
                     alt="Become A Better Blogger: Content Planning" class="img-cover">
                 </figure>
 
@@ -1179,11 +1242,12 @@
                   <a href="#" class="card-btn" aria-label="read more">
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
+              
 
-                  <a href="#" class="card-subtitle">Online</a>
+                  <a href="#" class="card-subtitle">Instructor</a>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Become A Better Blogger: Content Planning</a>
+                    <a href="#" class="card-title">Lorem ipsum dolor </a>
                   </h3>
 
                   <ul class="card-meta-list">
@@ -1191,13 +1255,13 @@
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="span">Oct 10, 2021</span>
+                      <span class="span">Nov 10, 2023</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="span">Com 09</span>
+                      <span class="span"> Lorem ipsum dolor sit amet consectetur.</span>
                     </li>
 
                   </ul>
@@ -1215,7 +1279,7 @@
               <div class="blog-card">
 
                 <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
-                  <img src="./assets/images/blog-3.jpg" width="370" height="370" loading="lazy"
+                  <img src="./assets/CSEPATHSHALA/Part-B/12/Praveen Gautam/praveen gautam.jpeg" width="370" height="370" loading="lazy"
                     alt="Become A Better Blogger: Content Planning" class="img-cover">
                 </figure>
 
@@ -1225,10 +1289,10 @@
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
 
-                  <a href="#" class="card-subtitle">Online</a>
+                  <a href="#" class="card-subtitle">Software Developer</a>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Become A Better Blogger: Content Planning</a>
+                    <a href="#" class="card-title">Lorem ipsum dolor sit amet.</a>
                   </h3>
 
                   <ul class="card-meta-list">
@@ -1236,14 +1300,20 @@
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="span">Oct 10, 2021</span>
+                      <span class="span">nov 10, 2023</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="span">Com 09</span>
+                      <span class="span">loreem </span>
                     </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">Lorem ipsum dolor sit amet consectetur.</span>
+                    </li>
+
 
                   </ul>
 
@@ -1312,7 +1382,7 @@
         <div class="footer-brand">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo-light.svg" width="162" height="50" alt="EduWeb logo">
+            <img src="./assets/CSEPATHSHALA/Part-A/1/white transperent logo.png" width="162" height="50" alt="EduWeb logo">
           </a>
 
           <p class="footer-brand-text">
@@ -1322,19 +1392,19 @@
           <div class="wrapper">
             <span class="span">Add:</span>
 
-            <address class="address">70-80 Upper St Norwich NR2</address>
+            <address class="address">Noida </address>
           </div>
 
           <div class="wrapper">
             <span class="span">Call:</span>
 
-            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+            <a href="tel:+011234567890" class="footer-link">74758585890</a>
           </div>
 
           <div class="wrapper">
             <span class="span">Email:</span>
 
-            <a href="mailto:info@eduweb.com" class="footer-link">info@eduweb.com</a>
+            <a href="mailto:info@eduweb.com" class="footer-link">info@CSEPATHSHALA.com</a>
           </div>
 
         </div>

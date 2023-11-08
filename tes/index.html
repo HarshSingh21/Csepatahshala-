@@ -1,171 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Text</title>
+  <style>
+    .animated-text {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid transparent;
+      font-weight: bold;
+      color: darkpink;
+    }
 
-    <style>
-        body {
-            text-align: left;
-        }
+    .animated-text.active {
+      border-right: 2px solid #000;
+      animation: typeWriter 2s steps(20) forwards;
+    }
 
-        .course-container {
-            display: none;
-            justify-content: left;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .course-card {
-            width: calc(33.33% - 20px);
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-            border-radius: 10px;
-            text-align: center;
-            margin: 1%;
-        }
-
-        .course-card img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .course-card:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .discount-price {
-            color: red;
-            font-weight: bold;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-        }
-
-        .active {
-            display: flex;
-        }
-
-        .tab-button-container {
-            display: flex;
-            justify-content: left;
-            gap: 10px;
-            border-bottom: 1px solid #000;
-            margin-bottom: 10px;
-        }
-
-        .tab-button {
-            background-color: transparent;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-bottom: 2px solid transparent;
-        }
-
-        .tab-button:hover {
-            border-bottom: 2px solid #888;
-        }
-
-        .tab-button.active {
-            border-bottom: 2px solid #000;
-        }
-
-        .medium-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    </style>
+    @keyframes typeWriter {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Our Courses</h1>
+  <span class="animated-text" data-words="Affordable | easy | innovative | Immersive | Hands-On "></span>
 
-    <div class="tab-button-container">
-        <button class="tab-button active" onclick="showTab('trending')">Trending</button>
-        <button class="tab-button" onclick="showTab('live')">Live</button>
-        <button class="tab-button" onclick="showTab('community')">Community</button>
-    </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedText = document.querySelector('.animated-text');
+      const words = animatedText.getAttribute('data-words').split(' | ');
+      let wordIndex = 0;
+      let charIndex = 0;
 
-    <div class="medium-container">
-        <div id="trending" class="course-container active">
-            <!-- Trending Courses Here (Your existing course cards will be here) -->
-            <div class="course-card">
-                <!-- Course 1 structure, similar for other courses -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/MIT_Media_Lab.jpg">
-                <h2>Decode Full Stack Web Dev 1.0</h2>
-                <p>Instructors: Hitesh Choudhary and 3 more</p>
-                <p>Starts on 25 Nov 2023</p>
-                <p>Features: Projects, Practice Exercises & More</p>
-                <p><span class="discount-price">₹3500.00</span> <span class="original-price">₹7000.00</span></p>
-                <button>Enroll Now</button>
-            </div>
-            
-            <div class="course-card">
-                <!-- Course 1 structure, similar for other courses -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/MIT_Media_Lab.jpg">
-                <h2>Decode Full Stack Web Dev 1.0</h2>
-                <p>Instructors: Hitesh Choudhary and 3 more</p>
-                <p>Starts on 25 Nov 2023</p>
-                <p>Features: Projects, Practice Exercises & More</p>
-                <p><span class="discount-price">₹3500.00</span> <span class="original-price">₹7000.00</span></p>
-                <button>Enroll Now</button>
-            </div>
-    
-            <!-- Add more course cards here -->
-        </div>
+      function type() {
+        const currentWord = words[wordIndex];
+        animatedText.textContent = currentWord.substring(0, charIndex);
 
-        <div id="live" class="course-container">
-            <!-- Live Courses Here -->
-            <div class="course-card">
-                <!-- Course 1 structure, similar for other courses -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/MIT_Media_Lab.jpg">
-                <h2>Decode Full Stack Web Dev 1.0</h2>
-                <p>Instructors: Hitesh Choudhary and 3 more</p>
-                <p>Starts on 25 Nov 2023</p>
-                <p>Features: Projects, Practice Exercises & More</p>
-                <p><span class="discount-price">₹3500.00</span> <span class="original-price">₹7000.00</span></p>
-                <button>Enroll Now</button>
-            </div>
-            
-            <!-- Add more course cards here -->
-        </div>
+        if (charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(type, 100); // Adjust typing speed here
+        } else {
+          setTimeout(erase, 1000); // Wait after typing
+        }
+      }
 
-        <div id="community" class="course-container">
-            <!-- Community Courses Here -->
-            <div class="course-card">
-                <!-- Course 1 structure, similar for other courses -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/MIT_Media_Lab.jpg">
-                <h2>Decode Full Stack Web Dev 1.0</h2>
-                <p>Instructors: Hitesh Choudhary and 3 more</p>
-                <p>Starts on 25 Nov 2023</p>
-                <p>Features: Projects, Practice Exercises & More</p>
-                <p><span class="discount-price">₹3500.00</span> <span class="original-price">₹7000.00</span></p>
-                <button>Enroll Now</button>
-            </div>
-            
-            <!-- Add more course cards here -->
-        </div>
-    </div>
+      function erase() {
+        if (charIndex > 0) {
+          const currentWord = words[wordIndex];
+          animatedText.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(erase, 50); // Adjust erasing speed here
+        } else {
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, 500); // Wait before typing the next word
+        }
+      }
+
+      setTimeout(type, 500);
+    });
+  </script>
 </body>
-
-<script>
-    function showTab(tabName) {
-        let containers = document.querySelectorAll('.course-container');
-        for (let container of containers) {
-            container.classList.remove('active');
-        }
-
-        let buttons = document.querySelectorAll('.tab-button');
-        for (let button of buttons) {
-            button.classList.remove('active');
-        }
-
-        document.getElementById(tabName).classList.add('active');
-        event.target.classList.add('active');
-    }
-</script>
 </html>
