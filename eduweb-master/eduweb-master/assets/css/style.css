@@ -6,10 +6,103 @@
  * copyright 2022 codewithsadee
  */
 
+ ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bullet-item {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.bullet-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007BFF; /* Change the color as desired */
+  transform: scale(0);
+  animation: scaleUp 0.3s ease-in-out 0.3s forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+  .button-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+  }
+
+  .btn {
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
 
 
+  /* .price */
+  .price-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Display list items horizontally */
+  }
 
+  .price-list li {
+    display: inline; /* Make list items inline */
+    margin-right: 20px;
+  }
 
+  .price {
+    font-size: 24px;
+    margin-right: 5px; /* Adjust margin for spacing */
+  }
+
+  .discount {
+    color: red;
+    text-decoration: line-through;
+  }
+  .discountd {
+    color: red;
+    font-size: 20px;
+   
+  }
+
+  .new-price {
+    color: green;
+  }
+  .video-card {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for desktop */
+    width: 100%;
+  }
+
+  .video-card iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    /* Adjust for tablet screens */
+    .video-card {
+      padding-bottom: 66.67%; /* 3:2 aspect ratio for tablets */
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    /* Adjust for mobile screens */
+    .video-card {
+      padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
+    }
+  }
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
