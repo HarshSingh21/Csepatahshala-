@@ -1,70 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animated Text</title>
-  <style>
-    .animated-text {
-      display: inline-block;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid transparent;
-      font-weight: bold;
-      color: darkpink;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Advertisement Page</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .shadow-box-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 192, 203, 0.5); /* Semi-transparent pink */
+        padding: 10px; /* Spacing for the text */
+        border-radius: 0 0 10px 10px; /* Rounded corners on the bottom */
     }
 
-    .animated-text.active {
-      border-right: 2px solid #000;
-      animation: typeWriter 2s steps(20) forwards;
+    .exclusive-offer {
+        position: absolute;
+        top: -25px;
+        left: 15px;
+        background-color: #fff;
+        padding: 5px 20px;
+        border-radius: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
     }
 
-    @keyframes typeWriter {
-      from {
-        width: 0;
+    .image-frame {
+        position: relative;
+        overflow: hidden; /* Ensures that the overlay fits within the container */
+        border-radius: 10px; /* Rounded corners for the container */
+        line-height: 0; /* Remove space below the image */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin-bottom: 15px;
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform .5s ease;
+    }
+
+    .footer {
+        padding: 20px 0;
+        background-color: #f8f9fa;
+        margin-top: 30px;
+        font-size: 0.9rem;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    .container {
+      display: flex;
+      align-items: stretch; /* Ensure children of .container fill the height */
+      border: 2px solid #000;
+      margin: 10px;
+    }
+    
+    .image-container {
+      position: relative;
+      flex: 1; /* Adjust the flex value to resize image and offer sections */
+    }
+    
+    .image-frame {
+      position: relative;
+      width: 100%;
+    }
+    
+    .image-frame img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+    
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: pink;
+      opacity: 0.5; /* Adjust the opacity for desired transparency level */
+    }
+    
+    .offer-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffc0cb;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    /* Additional styles here... */
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
       }
-      to {
+    
+      .image-container, .offer-container {
         width: 100%;
       }
     }
-  </style>
+    .container {
+      width: fit-content;
+      margin: 20px;
+      border: 2px solid #000;
+      border-radius: 10px; /* Rounded corners */
+      overflow: hidden; /* Ensures that all content fits neatly within the corners */
+    }
+    
+    .image-container {
+      position: relative;
+      width: 100%;
+      border-radius: 10px; /* Rounded corners for the image */
+      overflow: hidden; /* Ensures that the image does not bleed outside the border */
+    }
+    
+    .image-container img.hotel-image {
+      width: 100%;
+      display: block;
+    }
+    
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 192, 203, 0.7); /* Semi-transparent pink */
+      padding: 20px 0; /* Spacing above and below the text */
+    }
+    
+    .exclusive-offer {
+      position: absolute;
+      top: 10px; /* Adjust as necessary for your design */
+      left: 50%;
+      transform: translateX(-50%); /* Centers the offer label */
+      background-color: #fff;
+      padding: 5px 20px;
+      border-radius: 25px; /* Rounded corners for the offer label */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds some depth with a shadow */
+      font-weight: bold;
+    }
+    
+</style>
 </head>
 <body>
-  <span class="animated-text" data-words="Affordable | easy | innovative | Immersive | Hands-On "></span>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const animatedText = document.querySelector('.animated-text');
-      const words = animatedText.getAttribute('data-words').split(' | ');
-      let wordIndex = 0;
-      let charIndex = 0;
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Cse patashala</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-      function type() {
-        const currentWord = words[wordIndex];
-        animatedText.textContent = currentWord.substring(0, charIndex);
+<!-- Advertisement Container -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="image-frame">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/PNY_Exterior_with_Rolls_Royce.jpg" alt="Hotel Room">
+                <div class="shadow-box-overlay">
+                    <span class="exclusive-offer">APP EXCLUSIVE OFFER</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h2>Get 100% Cashback</h2>
+            <p>Book your first stay with us and get a full refund as OYO money cashback!</p>
+            <p class="lead">Starting at only ₹399</p>
+            <div>
+                <p><strong>Scan to download our app</strong></p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="Download App QR Code" style="width: 100px; height: auto;">
+            </div>
+        </div>
+    </div>
+</div>
 
-        if (charIndex < currentWord.length) {
-          charIndex++;
-          setTimeout(type, 100); // Adjust typing speed here
-        } else {
-          setTimeout(erase, 1000); // Wait after typing
+<!-- Iframe Container -->
+	ChatGPT
+
+To make the containers more interactive and to load sequentially on scroll, you can use JavaScript along with CSS animations. This will enhance user experience by creating a lazy-loading effect, where the content is displayed as the user scrolls down the page.
+
+Below is an updated version of the previous code with added interactivity and scroll-based loading of the containers:
+
+html
+<style>
+    /* Previous CSS here ... */
+    /* ... */
+
+    /* Additional styles for interactivity */
+    .fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in.scroll-in {
+        opacity: 1;
+    }
+
+    .footer {
+        /* Existing footer styles... */
+        /* ... */
+        margin-top: 50px; /* Increased space above footer */
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar here -->
+<!-- ... -->
+
+<!-- Advertisement Container -->
+<div class="container mt-5 fade-in" id="adContainer">
+    <!-- Existing advertisement content here -->
+    <!-- ... -->
+</div>
+
+<!-- Iframe Container -->
+<div class="container my-5 fade-in" id="iframeContainer">
+
+  <iframe width="4640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=OEs4DtYPaUuopLka1I214m_DPu15HvxMnCG2sUtIbRhURVZHU1pWQUM4Sk9VTDNVWTRKR1cySlpQNC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+</div>
+	</div>
+	
+
+<!-- Footer -->
+<footer class="footer text-center">
+    © 2023 Hotel Brand. All rights reserved.
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('scroll', fadeInOnScroll);
+});
+
+function fadeInOnScroll() {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    for (let i = 0; i < fadeInElements.length; i++) {
+        const element = fadeInElements[i];
+        const position = element.getBoundingClientRect();
+
+        // Checking if the element is within the viewport
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+            element.classList.add('scroll-in');
         }
-      }
+    }
+}
+</script>
 
-      function erase() {
-        if (charIndex > 0) {
-          const currentWord = words[wordIndex];
-          animatedText.textContent = currentWord.substring(0, charIndex - 1);
-          charIndex--;
-          setTimeout(erase, 50); // Adjust erasing speed here
-        } else {
-          wordIndex = (wordIndex + 1) % words.length;
-          setTimeout(type, 500); // Wait before typing the next word
-        }
-      }
-
-      setTimeout(type, 500);
-    });
-  </script>
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Advertisement Page</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./eduweb-master/eduweb-master/assets/css/style.css">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .image-frame {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        line-height: 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform .5s ease;
+    }
+
+    .shadow-box-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 192, 203, 0.5);
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .exclusive-offer {
+        position: absolute;
+        top: -25px;
+        left: 15px;
+        background-color: #fff;
+        padding: 5px 20px;
+        border-radius: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    } body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer {
+        padding: 20px 0;
+        background-color: #f8f9fa;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        /* Your responsive CSS if needed */
+    }
+</style>
+</head>
+<body>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Cse Patashala</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./eduweb-master/eduweb-master/assets/CSEPATHSHALA/Part-A/1/white logo.png" width="92" height="20" alt="cse logo" >
+
+        <!-- <img src="./assets/images/logo.svg" width="162" height="50" alt="cse logo"> -->
+
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="./assets/CSEPATHSHALA/Part-A/1/white logo.png" width="92" height="20" alt="cse logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#courses" class="navbar-link" data-nav-link>Courses</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+        </ul>
+
+      </nav>
+<!-- 
+      <div class="header-actions">
+
+        <button class="header-action-btn" aria-label="toggle search" title="Search">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <button class="header-action-btn" aria-label="cart" title="Cart">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon> -->
+
+          <!-- <span class="btn-badge">0</span>
+        </button>
+
+        <a href="#" class="btn has-before">
+          <span class="span">Try for free</span> -->
+
+         
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+<section class="section category" aria-label="category">
+    <div class="container">
+
+      <p class="section-subtitle">Our Ecosystem</p>
+
+
+      <h2 class="h2 section-title">
+        Online <span class="span">Classes</span> For Remote Learning.
+      </h2>
+
+      <p class="section-text">
+        Experienced and Certified Trainers: Gain valuable insights from certified trainers with extensive experience who understand both academic and industry requirements.
+      </p>
+
+      <ul class="grid-list">
+
+        <li>
+          <div class="category-card" style="--color: 170, 75%, 41%">
+
+            <div class="card-icon">
+              <img src="./assets/images/category-1.svg" width="40" height="40" loading="lazy" alt="Online Degree Programs" class="img">
+            </div>
+
+            <h3 class="h3">
+              <a href="#" class="card-title">      Guest Expert </a>
+            </h3>
+
+            <p class="card-text">
+              Sessions:  
+              Be inspired by prominent guest speakers, renowned for their wealth of academic and industry experience, enriching every course
+              
+            </p>
+
+            <span class="card-badge">7 Courses</span>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="category-card" style="--color: 351, 83%, 61%;padding: 37px;">
+
+            <div class="card-icon">
+              <img src="./assets/images/category-2.svg" width="40" height="40" loading="lazy" alt="Non-Degree Programs" class="img">
+            </div>
+
+            <h3 class="h3">
+              <a href="#" class="card-title">Live Sessions:</a>
+            </h3>
+
+            <p class="card-text">
+              Engage in over 25+ hours of live sessions with expert trainers, receiving comprehensive guidance and expertise to enhance your skills and knowledge.
+            </p>
+
+            <span class="card-badge">4 Courses</span>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="category-card" style="--color: 229, 75%, 58%">
+
+            <div class="card-icon">
+              <img src="./assets/images/category-3.svg" width="40" height="40" loading="lazy" alt="Off-Campus Programs" class="img">
+            </div>
+
+            <h3 class="h3">
+              <a href="#" class="card-title"> Projects </a>
+            </h3>
+
+            <p class="card-text">
+             
+              Apply your knowledge on real-life projects, and evaluations will be based on your project's performance and impact.
+            </p>
+
+            <span class="card-badge">8 Courses</span>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="category-card" style="--color: 42, 94%, 55%;padding: 24px;">
+
+            <div class="card-icon">
+              <img src="./assets/images/category-4.svg" width="40" height="40" loading="lazy" alt="Hybrid Distance Programs" class="img">
+            </div>
+
+            <h3 class="h3">
+              <a href="#" class="card-title"> Scholarship and Rewards</a>
+            </h3>
+
+            <p class="card-text">
+              Reward your dedication with a 50% scholarship for future courses and cash rewards for the top 3% of students, fostering motivation and achievement. Terms and conditions apply
+            </p>
+
+            <span class="card-badge">8 Courses</span>
+
+          </div>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </section>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="image-frame">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/PNY_Exterior_with_Rolls_Royce.jpg" alt="Hotel Room">
+                <div class="shadow-box-overlay">
+                    <span class="exclusive-offer">APP EXCLUSIVE OFFER</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h2>Get 100% Cashback</h2>
+            <p>Book your first stay with us and get a full refund as OYO money cashback!</p>
+            <p class="lead">Starting at only ₹399</p>
+            <div>
+                <p><strong>Scan to download our app</strong></p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="Download App QR Code" style="width: 100px; height: auto;">
+            </div>
+        </div>
+    </div>
+</div>
+
+	<br	>
+    
+    <br>
+	<iframe width="1640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=OEs4DtYPaUuopLka1I214m_DPu15HvxMnCG2sUtIbRhURVZHU1pWQUM4Sk9VTDNVWTRKR1cySlpQNC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+	
+	<footer class="footer text-center">
+    © 2023 Hotel Brand. All rights reserved.
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
