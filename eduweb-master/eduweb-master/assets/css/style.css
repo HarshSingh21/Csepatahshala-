@@ -1367,8 +1367,8 @@ body {
    * REUSED STYLE
    */
 
-  .container { max-width: 1185px; }
-
+  /* .container { max-width: 1185px; } */
+  .container { max-width: 1495px; }
   .shape { display: block; }
 
   .about-content,
